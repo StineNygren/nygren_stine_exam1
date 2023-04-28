@@ -60,7 +60,10 @@ main {
   padding: 0 1rem;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
+  .navigation-list a {
+    padding: 0;
+  }
   .navigation-list {
     transition: top 2s ease;
     display: none;
@@ -73,15 +76,30 @@ main {
     padding: 5rem 2rem 10rem 2rem;
     margin: 0;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-end;
+    /* justify-content: space-around; */
     transition: top 2s ease;
+    gap: 2rem;
+  }
+
+  .coffee-icon.active {
+    background-image: url(../img/coffe-bean.png);
+    background-size: cover;
+
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 250px;
+    z-index: 1000;
+    position: absolute;
+    left: -3rem;
+    bottom: 7rem;
+    transform: rotate(23deg);
   }
 
   .toggle-butten {
     display: block;
     position: absolute;
     right: 2rem;
-    z-index: 9999;
+    z-index: 9990;
   }
 }
