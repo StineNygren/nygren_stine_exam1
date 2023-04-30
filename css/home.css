@@ -1,0 +1,45 @@
+@import "./style.css";
+.qoute-section {
+  background-color: var(--secondary-color);
+  height: 30vh;
+}
+.qoute-section p {
+  width: 50vw;
+  color: white;
+  padding-top: 2rem;
+  margin-left: 2rem;
+  font-style: italic;
+}
+
+/* .hero-section {
+  justify-content: space-around;
+} */
+
+.img-hero-section img {
+  position: absolute;
+  top: 13rem;
+  right: 2rem;
+  width: 35vw;
+}
+.img-hero-section.active {
+  display: none;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+.text-hero-section p {
+  width: 40vw;
+}
+.text-hero-section {
+  margin-left: 2rem;
+}
+
+@media (min-width: 500px) {
+  .img-hero-section img {
+    top: 10rem;
+    right: 10rem;
+    width: 20vw;
+  }
+}
