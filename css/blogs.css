@@ -1,0 +1,16 @@
+.blog-posts {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 500px) {
+  .blog-posts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .blog-posts {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

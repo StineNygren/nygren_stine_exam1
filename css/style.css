@@ -7,6 +7,7 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
   font-size: 1.6rem;
   min-height: 100vh;
   font-family: "Arapey", serif;
@@ -23,7 +24,7 @@ body {
   font-size: clamp(3rem, 2.9rem + 0.5vw, 3.5rem);
 }
 .font-size-small {
-  font-size: clamp(1.4rem, 1.32rem + 0.4vw, 1.8rem);
+  font-size: clamp(1.6rem, 1.56rem + 0.2vw, 1.8rem);
 }
 .font-size-medium {
   font-size: clamp(2.1rem, 1.92rem + 0.9vw, 3rem);
@@ -35,18 +36,18 @@ body {
 
 header {
   background-color: var(--primary-color);
-  position: fixed;
+  /* position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
   width: 100%;
   align-items: center;
   justify-content: space-between;
   height: 100px;
 }
 
-main {
-  margin-top: 100px;
-}
+/* main {
+  padding: 0 6rem;
+} */
 
 .logo img {
   padding: 1rem 1rem;
