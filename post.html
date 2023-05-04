@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lecture</title>
+    <title>Goldbrews | Post</title>
     <script
       src="https://kit.fontawesome.com/7e6258cfd5.js"
       crossorigin="anonymous"
@@ -15,12 +15,32 @@
       href="https://fonts.googleapis.com/css2?family=Arapey&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/style.css" />
     <script defer src="./js/script.js"></script>
     <script defer src="./js/post.js"></script>
-    <link rel="stylesheet" href="./css/style.css" />
+
     <!-- <link rel="stylesheet" href="./css/blogs.css" /> -->
   </head>
   <body>
+    <header class="flex">
+      <div class="logo">
+        <img src="./img/logo.svg" alt="The logo of Gold Brews" />
+      </div>
+      <section class="navigation">
+        <div class="toggle-butten font-size-medium">
+          <i onclick="myFunction(this)" class="fa fa-bars"></i>
+        </div>
+        <nav class="navigation-section">
+          <ul class="flex navigation-list">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./blogs.html">Blogs</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./about.html">About us</a></li>
+            <div class="coffee-icon"></div>
+          </ul>
+        </nav>
+      </section>
+    </header>
     <section class="post-hero"></section>
     <section class="post-paragraph"></section>
   </body>

@@ -26,7 +26,7 @@ async function singleJacket() {
     </div>
       `;
     postParagraph.innerHTML = `
-    <p class="drink-ingredients">${result.content.rendered}</p>
+    <p class="drink-p font-size-small">${result.content.rendered}</p>
       `;
     // jacketInfo.innerHTML = `
     //   <h1 class="bold scott-header">${result.name}</h1>

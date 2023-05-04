@@ -6,8 +6,9 @@
 .qoute-section p {
   width: 50vw;
   color: white;
-  padding-top: 2rem;
+  padding-top: 3rem;
   margin-left: 2rem;
+  margin-top: 2rem;
   font-style: italic;
 }
 .blogs-butten {
@@ -29,10 +30,10 @@
 
 .img-hero-section img {
   position: absolute;
-  top: 12rem;
+  top: 14rem;
   right: 2rem;
   /* width: 35vw; */
-  width: clamp(11.2rem, 9.44rem + 8.8vw, 20rem);
+  width: clamp(11rem, 7.2rem + 19vw, 30rem);
 }
 .img-hero-section.active {
   display: none;
@@ -40,6 +41,7 @@
 
 h1 {
   font-weight: normal;
+  /* text-transform: uppercase; */
 }
 
 .text-hero-section p {
@@ -67,6 +69,7 @@ h1 {
   .text-hero-section,
   .qoute-section p {
     margin-left: 4rem;
+    min-height: 250px;
   }
 }
 @media (min-width: 1000px) {
@@ -86,6 +89,40 @@ h1 {
   }
   .text-hero-section,
   .qoute-section p {
+    margin-top: 3rem;
     margin-left: 6rem;
   }
+}
+
+.carousel-section {
+  position: relative;
+  overflow-x: hidden;
+  height: 200px;
+}
+.carousel-blog-post {
+  position: absolute;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  left: 0;
+  top: 0;
+  transition: 0.4s ease-in-out;
+}
+.carousel-post {
+  width: 300px;
+  height: 200px;
+  margin: 0 10px;
+}
+
+.carousel-btn {
+  border: none;
+  outline: none;
+  position: absolute;
+}
+
+.next {
+  right: 0;
+}
+.prev {
+  left: 0;
 }

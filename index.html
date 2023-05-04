@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lecture</title>
+    <title>Goldbrews</title>
     <script
       src="https://kit.fontawesome.com/7e6258cfd5.js"
       crossorigin="anonymous"
@@ -15,9 +15,12 @@
       href="https://fonts.googleapis.com/css2?family=Arapey&display=swap"
       rel="stylesheet"
     />
-    <script defer src="./js/script.js"></script>
+
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/home.css" />
+    <script defer src="./js/script.js"></script>
+    <script defer src="./js/home.js"></script>
+    <script defer src="./js/carousel.js"></script>
   </head>
   <body>
     <header class="flex">
@@ -30,10 +33,10 @@
         </div>
         <nav class="navigation-section">
           <ul class="flex navigation-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About us</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./blogs.html">Blogs</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./about.html">About us</a></li>
             <div class="coffee-icon"></div>
           </ul>
         </nav>
@@ -43,31 +46,34 @@
       <section class="hero-section flex">
         <div class="text-hero-section">
           <h1 class="font-size-large">GoldBrews</h1>
-          <p class="font-size-small">
+          <p class="font-size-medium">
             Start your day with liquid gold, fueled by the richness of coffee.
           </p>
-          <button class="blogs-butten"><a href="#">Blogs</a></button>
+          <button class="blogs-butten"><a href="./blogs.html">Blogs</a></button>
         </div>
         <div class="img-hero-section">
           <img src="./img/hero-img.svg" alt="" />
         </div>
       </section>
       <section class="qoute-section">
-        <p class="font-size-small">
+        <p class="font-size-medium">
           “May your coffee be strong and your Monday be short.” -Anonymous
         </p>
       </section>
-      <p class="font-size-large">
-        LOEM HAS TO TRY A BIT WITH BIG TEXT adipisicing elit. Animi odit
-      </p>
-      <p class="font-size-small">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi odit
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi odit
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi odit
-      </p>
-      <p class="font-size-medium">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi odit
-      </p>
+      <section
+        class="carousel-section"
+        blog-display-l="4"
+        blog-display-m="2"
+        blog-display-s="1"
+      >
+        <div class="carousel-blog-post"></div>
+        <button class="prev carousel-btn" onclick="prev()">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="next carousel-btn" onclick="next()">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </section>
     </main>
     <footer></footer>
   </body>

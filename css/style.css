@@ -27,7 +27,7 @@ body {
   font-size: clamp(1.6rem, 1.56rem + 0.2vw, 1.8rem);
 }
 .font-size-medium {
-  font-size: clamp(2.1rem, 1.92rem + 0.9vw, 3rem);
+  font-size: clamp(1.8rem, 1.56rem + 1.2vw, 3rem);
 }
 
 .flex {
@@ -43,6 +43,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 100px;
+  padding: 2rem;
 }
 
 /* main {
@@ -51,7 +52,7 @@ header {
 
 .logo img {
   padding: 1rem 1rem;
-  width: 12rem;
+  width: clamp(12rem, 10.4rem + 8vw, 20rem);
 }
 
 .toggle-butten {
@@ -67,9 +68,10 @@ header {
   color: var(--secondary-color);
   font-size: clamp(2.1rem, 1vw + 0.5rem, 3rem);
   padding: 0 1rem;
+  text-transform: uppercase;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .navigation-list a {
     padding: 0;
   }
@@ -81,7 +83,7 @@ header {
     background-color: var(--primary-color);
     position: fixed;
     inset: 100px 0 0 0;
-    padding: 5rem 2rem 10rem 2rem;
+    padding: 5rem 3rem 10rem;
     margin: 0;
     flex-direction: column;
     align-items: flex-end;
@@ -97,7 +99,7 @@ header {
     z-index: 1000;
     position: absolute;
     left: -1rem;
-    bottom: 7rem;
+    bottom: 40rem;
     transform: rotate(23deg);
   }
 
@@ -113,4 +115,8 @@ header {
 
 main {
   background-color: var(--primary-color);
+}
+
+.post-paragraph p {
+  font-size: clamp(1.6rem, 1.56rem + 0.2vw, 1.8rem);
 }
