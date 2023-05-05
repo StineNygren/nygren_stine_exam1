@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/home.css" />
     <script defer src="./js/script.js"></script>
-    <script defer src="./js/home.js"></script>
-    <script defer src="./js/carousel.js"></script>
+    <!-- <script defer src="./js/home.js"></script> -->
+    <script defer type="module" src="./js/carousel.js"></script>
   </head>
   <body>
     <header class="flex">
@@ -60,19 +60,28 @@
           “May your coffee be strong and your Monday be short.” -Anonymous
         </p>
       </section>
-      <section
-        class="carousel-section"
-        blog-display-l="4"
-        blog-display-m="2"
-        blog-display-s="1"
-      >
+      <!-- <section class="carousel-section">
         <div class="carousel-blog-post"></div>
-        <button class="prev carousel-btn" onclick="prev()">
+        <button class="prev carousel-btn">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
-        <button class="next carousel-btn" onclick="next()">
+        <button class="next carousel-btn">
           <i class="fa-solid fa-chevron-right"></i>
         </button>
+      </section> -->
+      <section class="carousel-wrapper">
+        <i id="prev" class="fa-solid fa-chevron-left"></i>
+        <div class="carousel"></div>
+
+        <i id="next" class="fa-solid fa-chevron-right"></i>
+      </section>
+      <section>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam dolorum
+          in ullam nulla exercitationem unde ex adipisci repellendus, dicta
+          dolore fugit, eveniet quia accusantium ipsa commodi voluptate aliquid
+          voluptates ducimus.
+        </p>
       </section>
     </main>
     <footer></footer>

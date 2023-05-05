@@ -94,7 +94,70 @@ h1 {
   }
 }
 
-.carousel-section {
+/* noe */
+
+.carousel-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-wrapper .carousel {
+  overflow: hidden;
+  /* white-space: nowrap; */
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3));
+  /* grid-auto-columns: calc((100% / 3) - 12px); */
+  /* gap: 16px; */
+}
+
+@media (max-width: 900px) {
+  .carousel-wrapper .carousel {
+    grid-auto-columns: calc((100% / 2));
+    /* grid-auto-columns: calc((100% / 2) - 9px); */
+  }
+}
+@media (max-width: 600px) {
+  .carousel-wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+
+.carousel .dragging .carousel-post {
+  cursor: grab;
+  user-select: none;
+}
+/* .carousel-blog-post {
+  position: absolute;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  left: 0;
+  top: 0;
+  transition: 0.4s ease-in-out;
+}
+.carousel-post {
+  width: 300px;
+  height: 200px;
+  margin: 0 10px;
+}
+
+.carousel-btn {
+  border: none;
+  outline: none;
+  position: absolute;
+}
+
+.next {
+  right: 0;
+}
+.prev {
+  left: 0;
+} */
+
+/* noe */
+/* .carousel-section {
   position: relative;
   overflow-x: hidden;
   height: 200px;
@@ -125,4 +188,4 @@ h1 {
 }
 .prev {
   left: 0;
-}
+} */
