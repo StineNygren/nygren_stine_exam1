@@ -30,6 +30,10 @@ body {
   font-size: clamp(1.8rem, 1.56rem + 1.2vw, 3rem);
 }
 
+.color-white {
+  color: white;
+}
+
 .flex {
   display: flex;
 }
@@ -113,10 +117,6 @@ header {
   }
 }
 
-main {
-  background-color: var(--primary-color);
-}
-
-.post-paragraph p {
+/* .post-paragraph p {
   font-size: clamp(1.6rem, 1.56rem + 0.2vw, 1.8rem);
-}
+} */

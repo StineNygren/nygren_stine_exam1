@@ -17,7 +17,7 @@
     />
     <script defer src="./js/script.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
   </head>
   <body>
     <header class="flex">
@@ -39,7 +39,43 @@
         </nav>
       </section>
     </header>
-    <main></main>
+    <main class="flex">
+      <section class="contact-form-wrapper">
+        <h1 class="color-white">Contact</h1>
+        <form action="" class="flex contact-form">
+          <input
+            class="input-field"
+            type="text"
+            name="name"
+            id=""
+            placeholder="Name:"
+          />
+          <input
+            class="input-field"
+            type="email"
+            name="email"
+            id=""
+            placeholder="Email:"
+          />
+          <input
+            class="input-field"
+            type="text"
+            name="subject"
+            id=""
+            placeholder="Subject:"
+          />
+          <textarea
+            class="input-field"
+            name="message"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Message:"
+          ></textarea>
+          <input type="submit" value="submit" />
+        </form>
+      </section>
+    </main>
     <footer></footer>
   </body>
 </html>

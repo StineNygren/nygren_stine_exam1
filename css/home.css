@@ -1,4 +1,7 @@
 @import "./style.css";
+main {
+  background-color: var(--primary-color);
+}
 .qoute-section {
   background-color: var(--secondary-color);
   height: 20vh;
@@ -96,20 +99,49 @@ h1 {
 
 /* noe */
 
+.carousel-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .carousel-wrapper {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   width: 100%;
   position: relative;
+}
+.carousel-wrapper i {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-wrapper i:first-child {
+  left: 10px;
+}
+.carousel-wrapper i:last-child {
+  right: 10px;
+}
+.carousel-text {
+  width: 300px;
+  background-color: white;
 }
 
 .carousel-wrapper .carousel {
   overflow: hidden;
-  /* white-space: nowrap; */
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 3));
   /* grid-auto-columns: calc((100% / 3) - 12px); */
   /* gap: 16px; */
+  /* justify-items: center; */
 }
 
 @media (max-width: 900px) {
@@ -128,64 +160,16 @@ h1 {
   cursor: grab;
   user-select: none;
 }
-/* .carousel-blog-post {
-  position: absolute;
-  display: flex;
-  align-items: start;
-  justify-content: start;
-  left: 0;
-  top: 0;
-  transition: 0.4s ease-in-out;
-}
-.carousel-post {
-  width: 300px;
-  height: 200px;
-  margin: 0 10px;
+
+.coffee-prosess {
+  background-color: var(--secondary-color);
+  flex-direction: column;
+  align-items: center;
 }
 
-.carousel-btn {
-  border: none;
-  outline: none;
-  position: absolute;
+@media (min-width: 600px) {
+  .coffee-prosess {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
-
-.next {
-  right: 0;
-}
-.prev {
-  left: 0;
-} */
-
-/* noe */
-/* .carousel-section {
-  position: relative;
-  overflow-x: hidden;
-  height: 200px;
-}
-.carousel-blog-post {
-  position: absolute;
-  display: flex;
-  align-items: start;
-  justify-content: start;
-  left: 0;
-  top: 0;
-  transition: 0.4s ease-in-out;
-}
-.carousel-post {
-  width: 300px;
-  height: 200px;
-  margin: 0 10px;
-}
-
-.carousel-btn {
-  border: none;
-  outline: none;
-  position: absolute;
-}
-
-.next {
-  right: 0;
-}
-.prev {
-  left: 0;
-} */

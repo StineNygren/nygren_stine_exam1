@@ -1,74 +1,4 @@
 import getBlogs from "./test.js";
-// async function getBlogs() {
-//   try {
-//     const response = await fetch(
-//       `https://exam1.stinenygren.no/wp-json/wp/v2/coffee?per_page=20`
-//     );
-//     const result = await response.json();
-
-//     postBlogs(result);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-// getBlogs();
-
-// const carousel = document.querySelector(".carousel");
-// const carouselWrapper = document.querySelector(".carousel-wrapper");
-// const carouselBtn = document.querySelectorAll(".carousel-wrapper i");
-// const firstCardWidth = carousel.querySelector(".carousel-post").offsetWidth;
-
-// function postBlogs(result) {
-//   result.forEach((post) => {
-//     const date = post.date.slice(0, 10);
-//     carousel.innerHTML += `
-//               <a href="./post.html?id=${post.id}" class="carousel-post" draggable="false">
-//                 <img class="drink-img" src="${post.acf.image}" alt="${post.acf.alttext}" draggable="false">
-//                 <p class="post.date">${date} | ${post.acf.readtime}</p>
-//                 <h2 class="drink-name">${post.slug}</h2>
-//                 <p class="drink-ingredients">${post.acf.ingredients}</p>
-//               </a>
-//             `;
-//   });
-// }
-
-// carouselBtn.forEach((btn) => {
-//   btn.addEventListener("click", () => {
-//     console.scrollLeft += btn.id === "prev" ? -firstCardWidth : firstCardWidth;
-//   });
-// });
-
-// let isDragging = false,
-//   startX,
-//   startScrollLeft;
-
-// const dragStart = (e) => {
-//   isDragging = true;
-//   carousel.classList.add("dragging");
-
-//   startX = e.pageX;
-
-//   startScrollLeft = carousel.scrollLeft;
-// };
-
-// const dragging = (e) => {
-//   if (!isDragging) return;
-//   carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-// };
-
-// const dragStop = () => {
-//   isDragging = false;
-//   //   carousel.classList.remove("dragging");
-// };
-
-// carousel.addEventListener("mousedown", dragStart);
-// carousel.addEventListener("mousemove", dragging);
-// document.addEventListener("mouseup", dragStop);
-
-// main.js
-
-//The most sucsessful code
 
 const carousel = document.querySelector(".carousel");
 const carouselWrapper = document.querySelector(".carousel-wrapper");
@@ -87,19 +17,32 @@ function postBlogs(result) {
   result.forEach((post) => {
     const date = post.date.slice(0, 10);
     carousel.innerHTML += `
-              <a href="./post.html?id=${post.id}" class="carousel-post" draggable="false">
+              <div class="carousel-post" draggable="false">
                 <img class="drink-img" src="${post.acf.image}" alt="${post.acf.alttext}" draggable="false">
+                <div class="carousel-text">
                 <p class="post.date">${date} | ${post.acf.readtime}</p>
                 <h2 class="drink-name">${post.slug}</h2>
                 <p class="drink-ingredients">${post.acf.ingredients}</p>
-              </a>
+                <a href="./post.html?id=${post.id}" >read post</a>
+                </div>
+              </div>
             `;
   });
 }
 
 carouselBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
-    carousel.scrollLeft += btn.id === "prev" ? -firstCardWidth : firstCardWidth;
+    const currentScrollLeft = carousel.scrollLeft;
+    const targetScrollLeft =
+      btn.id === "prev"
+        ? currentScrollLeft - firstCardWidth
+        : currentScrollLeft + firstCardWidth;
+    const index = Math.round(targetScrollLeft / firstCardWidth);
+    const newScrollLeft = index * firstCardWidth;
+    carousel.scrollTo({
+      left: newScrollLeft,
+      behavior: "smooth",
+    });
   });
 });
 
@@ -109,27 +52,46 @@ let isDragging = false,
 
 const dragStart = (e) => {
   isDragging = true;
-  carousel.classList.add("dragging");
-
-  startX = e.pageX;
-
+  if (e.type === "touchstart") {
+    startX = e.touches[0].pageX;
+  } else {
+    startX = e.pageX;
+  }
   startScrollLeft = carousel.scrollLeft;
 };
 
 const dragging = (e) => {
   if (!isDragging) return;
-  carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+  let currentX;
+  if (e.type === "touchmove") {
+    currentX = e.touches[0].pageX;
+  } else {
+    currentX = e.pageX;
+  }
+  carousel.scrollLeft = startScrollLeft - (currentX - startX);
 };
 
-const dragStop = () => {
+const dragStop = (e) => {
   isDragging = false;
-  //   carousel.classList.remove("dragging");
+  carousel.classList.remove("dragging");
+
+  const currentScrollLeft = carousel.scrollLeft;
+  const index = Math.round(currentScrollLeft / firstCardWidth);
+  const newScrollLeft = index * firstCardWidth;
+  carousel.scrollTo({
+    left: newScrollLeft,
+    behavior: "smooth",
+  });
 };
 
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
 
+carousel.addEventListener("touchstart", dragStart);
+carousel.addEventListener("touchmove", dragging);
+carousel.addEventListener("touchend", dragStop);
+
 window.addEventListener("resize", () => {
-  const updatedWidth = carousel.offsetWidth;
+  firstCardWidth = carousel.querySelector(".carousel-post").offsetWidth;
 });
