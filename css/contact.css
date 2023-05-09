@@ -10,7 +10,7 @@ body {
 .contact-form-wrapper {
   background: rgba(2, 1, 1, 0.75);
   border-radius: 20px;
-  width: 50vw;
+  width: clamp(30rem, 28rem + 10vw, 40rem);
   padding: 2rem 3rem;
 }
 
@@ -24,4 +24,11 @@ main {
   border-radius: 5px;
   border: 0;
   padding: 0.5rem;
+}
+
+.submit-btn {
+  background-color: var(--tertiary-color);
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  border: none;
 }

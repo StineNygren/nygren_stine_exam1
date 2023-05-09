@@ -3,6 +3,13 @@
   grid-template-columns: 1fr;
 }
 
+.more-btn {
+  background-color: var(--tertiary-color);
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  border: none;
+}
+
 @media (min-width: 500px) {
   .blog-posts {
     grid-template-columns: 1fr 1fr;
