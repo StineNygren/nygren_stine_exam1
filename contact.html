@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
     <script defer src="./js/script.js"></script>
+    <script defer src="./js/contact.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/contact.css" />
   </head>
@@ -42,7 +43,7 @@
     <main class="flex">
       <section class="contact-form-wrapper">
         <h1 class="color-white">Contact</h1>
-        <form action="" class="flex contact-form">
+        <form action="" class="flex contact-form" id="form">
           <input
             class="input-field"
             type="text"
@@ -50,13 +51,17 @@
             id="name"
             placeholder="Name:"
           />
+          <div class="form-error" id="name-error">Please enter your name</div>
           <input
             class="input-field"
-            type="email"
+            type="text"
             name="email"
             id="email"
             placeholder="Email:"
           />
+          <div class="form-error" id="email-error">
+            must include email addres
+          </div>
           <input
             class="input-field"
             type="text"
@@ -64,6 +69,9 @@
             id="subject"
             placeholder="Subject:"
           />
+          <div class="form-error" id="subject-error">
+            Must be 10 characters long
+          </div>
           <textarea
             class="input-field"
             name="message"
@@ -72,6 +80,9 @@
             rows="10"
             placeholder="Message:"
           ></textarea>
+          <div class="form-error" id="message-error">
+            Must be 25 characters long
+          </div>
           <input class="submit-btn color-white" type="submit" value="submit" />
         </form>
       </section>

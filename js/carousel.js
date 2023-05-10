@@ -11,8 +11,6 @@ getBlogs().then((result) => {
   firstCardWidth = carousel.querySelector(".carousel-post").offsetWidth;
 });
 
-console.log(firstCardWidth);
-
 function postBlogs(result) {
   result.forEach((post) => {
     const date = post.date.slice(0, 10);

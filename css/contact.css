@@ -1,4 +1,4 @@
-body {
+main {
   background-image: url(../img/contact-bg.png);
 }
 
@@ -31,4 +31,9 @@ main {
   border-radius: 5px;
   padding: 0.5rem 2rem;
   border: none;
+}
+
+.form-error {
+  display: none;
+  color: red;
 }

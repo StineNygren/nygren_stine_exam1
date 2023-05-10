@@ -28,10 +28,6 @@ async function singleJacket() {
     postParagraph.innerHTML = `
     <p class="drink-p font-size-small">${result.content.rendered}</p>
       `;
-    // jacketInfo.innerHTML = `
-    //   <h1 class="bold scott-header">${result.name}</h1>
-    //   <p class="scott-price">${result.price_html}</p>
-    //   `;
   } catch (error) {
     console.log(error);
   }
