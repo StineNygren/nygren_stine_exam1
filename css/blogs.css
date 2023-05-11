@@ -1,6 +1,12 @@
+@import "./style.css";
+
 .blog-posts {
   display: grid;
   grid-template-columns: 1fr;
+}
+.post-text {
+  background-color: white;
+  width: 30rem;
 }
 
 .more-btn {

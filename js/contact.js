@@ -12,6 +12,12 @@ const messageError = document.querySelector("#message-error");
 
 document.title = "Contact";
 
+form.addEventListener("keyup", (event) => {
+  nameValidation(event);
+  emailValidation(event);
+  subjectValidation(event);
+  messageValidation(event);
+});
 form.addEventListener("submit", (event) => {
   nameValidation(event);
   emailValidation(event);
@@ -21,40 +27,40 @@ form.addEventListener("submit", (event) => {
 
 function nameValidation(event) {
   if (nameInput.value.length > 5) {
-    nameError.style.display = "none";
+    nameError.style.visibility = "hidden";
     return true;
   }
   event.preventDefault();
-  nameError.style.display = "block";
+  nameError.style.visibility = "visible";
   return false;
 }
 
 function emailValidation(event) {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
-    emailError.style.display = "none";
+    emailError.style.visibility = "hidden";
     return true;
   }
-  emailError.style.display = "block";
+  emailError.style.visibility = "visible";
   event.preventDefault();
   return false;
 }
 
 function subjectValidation(event) {
   if (subject.value.length > 15) {
-    subjectError.style.display = "none";
+    subjectError.style.visibility = "hidden";
     return true;
   }
   event.preventDefault();
-  subjectError.style.display = "block";
+  subjectError.style.visibility = "visible";
   return false;
 }
 
 function messageValidation(event) {
   if (message.value.length > 25) {
-    messageError.style.display = "none";
+    messageError.style.visibility = "hidden";
     return true;
   }
   event.preventDefault();
-  messageError.style.display = "block";
+  messageError.style.visibility = "visible";
   return false;
 }

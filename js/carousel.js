@@ -18,7 +18,7 @@ function postBlogs(result) {
               <div class="carousel-post" draggable="false">
                 <img class="drink-img" src="${post.acf.image}" alt="${post.acf.alttext}" draggable="false">
                 <div class="carousel-text">
-                <p class="post.date">${date} | ${post.acf.readtime}</p>
+                <p class="post-date">${date} | ${post.acf.readtime}</p>
                 <h2 class="drink-name">${post.slug}</h2>
                 <p class="drink-ingredients">${post.acf.ingredients}</p>
                 <a href="./post.html?id=${post.id}" >read post</a>

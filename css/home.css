@@ -1,7 +1,5 @@
 @import "./style.css";
-main {
-  background-color: var(--primary-color);
-}
+
 .qoute-section {
   background-color: var(--secondary-color);
   height: 20vh;

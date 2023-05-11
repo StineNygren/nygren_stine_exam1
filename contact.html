@@ -51,7 +51,9 @@
             id="name"
             placeholder="Name:"
           />
-          <div class="form-error" id="name-error">Please enter your name</div>
+          <div class="form-error" id="name-error">
+            Must be more than 5 characters long
+          </div>
           <input
             class="input-field"
             type="text"
@@ -60,7 +62,7 @@
             placeholder="Email:"
           />
           <div class="form-error" id="email-error">
-            must include email addres
+            Must be a valid email address
           </div>
           <input
             class="input-field"
@@ -70,7 +72,7 @@
             placeholder="Subject:"
           />
           <div class="form-error" id="subject-error">
-            Must be 10 characters long
+            Must be more than 15 characters long
           </div>
           <textarea
             class="input-field"
@@ -81,7 +83,7 @@
             placeholder="Message:"
           ></textarea>
           <div class="form-error" id="message-error">
-            Must be 25 characters long
+            Must be more than 25 characters long
           </div>
           <input class="submit-btn color-white" type="submit" value="submit" />
         </form>

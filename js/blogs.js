@@ -29,11 +29,13 @@ function postBlogs(result) {
   result.forEach((post) => {
     const date = post.date.slice(0, 10);
     blogPosts.innerHTML += `
-      <a href="./post.html?id=${post.id}" class="post">
+      <a href="./post.html?id=${post.id}" class="post link">
         <img class="drink-img" src="${post.acf.image}" alt="${post.acf.alttext}">
-        <p class="post-date">${date} | ${post.acf.readtime}</p>
-        <h2 class="drink-name">${post.slug}</h2>
-        <p class="drink-ingredients">${post.acf.ingredients}</p>
+        <div class="post-text">
+        <p class="post-date link">${date} | ${post.acf.readtime}</p>
+        <h2 class="drink-name link">${post.slug}</h2>
+        <p class="drink-ingredients link">${post.acf.ingredients}</p>
+        </div>
       </a>
     `;
   });
