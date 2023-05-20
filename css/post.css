@@ -21,5 +21,60 @@
   position: fixed;
   top: 50%;
   left: 50%;
+  max-height: 50vh;
   transform: translate(-50%, -50%);
+}
+.post-hero {
+  display: flex;
+  flex-direction: column;
+  max-width: 120rem;
+}
+
+.post-hero-text {
+  display: flex;
+  width: 100vw;
+  height: 20vh;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.hero-drink-img {
+  width: 100vw;
+  max-height: 30vh;
+  object-fit: cover;
+}
+.post-main {
+  flex-direction: column;
+  align-items: center;
+}
+.post-paragraph {
+  padding: 3rem;
+  max-width: 120rem;
+}
+p:nth-child(2)::first-letter {
+  font-size: 4rem;
+  float: left;
+  line-height: 1;
+}
+
+@media (min-width: 500px) {
+  .drink-img-modal {
+    max-height: 70vh;
+  }
+  .post-hero {
+    flex-direction: row;
+  }
+  .hero-drink-img {
+    width: fit-content;
+    max-height: 40vh;
+    object-fit: cover;
+  }
+  .post-hero-text {
+    width: 30vw;
+    height: 40vh;
+  }
 }

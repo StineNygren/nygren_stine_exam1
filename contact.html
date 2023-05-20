@@ -19,12 +19,28 @@
     <script defer src="./js/contact.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/contact.css" />
+    <!-- Hotjar Tracking Code for goldenbrews -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3500263, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
   <body>
     <header class="flex">
-      <div class="logo">
+      <a href="./index.html" class="logo">
         <img src="./img/logo.svg" alt="The logo of Gold Brews" />
-      </div>
+      </a>
       <section class="navigation">
         <div class="toggle-butten font-size-medium">
           <i onclick="myFunction(this)" class="fa fa-bars"></i>
@@ -89,6 +105,22 @@
         </form>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="footer-logo">
+        <img src="./img/logo-footer.png" alt="golden brews logo" />
+      </div>
+      <section class="footer-links">
+        <p class="color-white">
+          <a href="./index.html">Home</a> |
+          <a href="./contact.html">Contact</a> |
+          <a href="./about.html">About</a> | <a href="./blogs.html">Blog</a>
+        </p>
+      </section>
+      <section class="social-media">
+        <img src="./img/pinterest.png" alt="pinterest logo" />
+        <img src="./img/facebook.png" alt="facebook logo" />
+        <img src="./img/twitter.png" alt="twitter logo" />
+      </section>
+    </footer>
   </body>
 </html>

@@ -17,13 +17,29 @@
     />
     <script defer src="./js/script.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/about.css" />
+    <!-- Hotjar Tracking Code for goldenbrews -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3500263, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
   <body>
     <header class="flex">
-      <div class="logo">
+      <a href="./index.html" class="logo">
         <img src="./img/logo.svg" alt="The logo of Gold Brews" />
-      </div>
+      </a>
       <section class="navigation">
         <div class="toggle-butten font-size-medium">
           <i onclick="myFunction(this)" class="fa fa-bars"></i>
@@ -39,7 +55,39 @@
         </nav>
       </section>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+      <div class="barista-img">
+        <img src="./img/barista.png" alt="" />
+      </div>
+      <div class="about-text">
+        <h1 class="font-size-large">About us</h1>
+        <p class="font-size-small">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          maxime rerum explicabo obcaecati alias, harum incidunt in omnis
+          numquam nihil consectetur consequuntur repellendus deserunt aperiam,
+          illo repellat laudantium nobis dolore?
+        </p>
+      </div>
+      <div class="about-img">
+        <img src="./img/aboutus-coffee.png" alt="" />
+      </div>
+    </main>
+    <footer>
+      <div class="footer-logo">
+        <img src="./img/logo-footer.png" alt="golden brews logo" />
+      </div>
+      <section class="footer-links">
+        <p class="color-white">
+          <a href="./index.html">Home</a> |
+          <a href="./contact.html">Contact</a> |
+          <a href="./about.html">About</a> | <a href="./blogs.html">Blog</a>
+        </p>
+      </section>
+      <section class="social-media">
+        <img src="./img/pinterest.png" alt="pinterest logo" />
+        <img src="./img/facebook.png" alt="facebook logo" />
+        <img src="./img/twitter.png" alt="twitter logo" />
+      </section>
+    </footer>
   </body>
 </html>

@@ -20,23 +20,23 @@ async function singlePost() {
     document.title = result.slug;
 
     postHeroImg.innerHTML = `
-    <img class="drink-img"  src="${result.acf.image}" alt="${result.acf.alttext}">
+    <img class="hero-drink-img"  src="${result.acf.imagel}" alt="${result.acf.alttext}">
     `;
     modal.innerHTML = `
-    <img class="drink-img-modal"  src="${result.acf.image}" alt="${result.acf.alttext}">
+    <img class="drink-img-modal"  src="${result.acf.imagel}" alt="${result.acf.alttext}">
     `;
 
     postHeroText.innerHTML = `
 
-    <div class="post-text">
-    <p class="post.date">${date} | ${result.acf.readtime}</p>
-    <h2 class="drink-name">${result.slug}</h2>
-    <p class="drink-ingredients">${result.acf.ingredients}</p>
-    </div>
+
+    <p class="post-date font-size-small">${date} | ${result.acf.readtime}</p>
+    <h2 class="drink-name font-size-large">${result.slug}</h2>
+    <p class="drink-ingredients font-size-small">${result.acf.ingredients}</p>
+
 
       `;
     postParagraph.innerHTML = `
-    <p class="drink-p font-size-small">${result.content.rendered}</p>
+    <p class="drink-p ">${result.content.rendered}</p>
       `;
   } catch (error) {
     console.log(error);

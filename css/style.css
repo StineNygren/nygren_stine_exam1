@@ -6,10 +6,6 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
-.link {
-  text-decoration: none;
-  color: black;
-}
 
 body {
   font-size: 1.6rem;
@@ -24,6 +20,8 @@ body {
   --tertiary-color: #99592a;
 }
 
+/* Font Size */
+
 .font-size-large {
   font-size: clamp(3rem, 2.9rem + 0.5vw, 3.5rem);
 }
@@ -34,6 +32,17 @@ body {
   font-size: clamp(1.8rem, 1.56rem + 1.2vw, 3rem);
 }
 
+/* Classes */
+
+.text-center {
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
 .color-white {
   color: white;
 }
@@ -42,21 +51,20 @@ body {
   display: flex;
 }
 
+/* Header */
+
 header {
   background-color: var(--primary-color);
-  /* position: fixed;
+  position: fixed;
   top: 0;
-  left: 0; */
+  left: 0;
   width: 100%;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 2rem;
+  z-index: 9000;
 }
-
-/* main {
-  padding: 0 6rem;
-} */
 
 .logo img {
   padding: 1rem 1rem;
@@ -96,6 +104,7 @@ header {
     flex-direction: column;
     align-items: flex-end;
     gap: 2rem;
+    z-index: 500;
   }
 
   .coffee-icon.active {
@@ -123,8 +132,34 @@ header {
 
 main {
   background-color: var(--primary-color);
+  margin-top: 100px;
 }
 
-/* .post-paragraph p {
+.drink-name::first-letter {
+  text-transform: uppercase;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-color);
+  padding: 5rem;
+}
+footer > * {
+  margin-top: 2rem;
+}
+
+.footer-logo img {
+  max-width: 25rem;
+}
+
+.footer-links p a {
+  color: white;
+  text-decoration: none;
   font-size: clamp(1.6rem, 1.56rem + 0.2vw, 1.8rem);
-} */
+}
+
+.social-media img {
+  width: 3rem;
+}

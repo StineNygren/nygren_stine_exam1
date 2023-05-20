@@ -21,7 +21,7 @@ function postBlogs(result) {
                 <p class="post-date">${date} | ${post.acf.readtime}</p>
                 <h2 class="drink-name">${post.slug}</h2>
                 <p class="drink-ingredients">${post.acf.ingredients}</p>
-                <a href="./post.html?id=${post.id}" >read post</a>
+                <a href="./post.html?id=${post.id}" class="post-link " >read post</a>
                 </div>
               </div>
             `;
