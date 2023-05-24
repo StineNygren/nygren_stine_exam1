@@ -64,3 +64,55 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+// Comment HTML
+
+const commentForm = document.querySelector("#comment-form");
+
+commentForm.innerHTML = `
+<input type="hidden" id="postId" value="${id}" />
+<div>
+  <label for="name">Name*</label>
+  <input id="name" type="text" required />
+</div>
+<div>
+  <label for="email">Email*</label>
+  <input id="email" type="email" required />
+</div>
+<div>
+  <label for="comment">Comment*</label>
+  <textarea id="comment" required></textarea>
+</div>
+<input type="submit" value="Post comment!" />
+`;
+
+// Trying comments
+
+function handleSubmit(evt) {
+  evt.preventDefault();
+
+  const [id, name, email, comment] = evt.target.elements;
+
+  const data = JSON.stringify({
+    post: id,
+    author_name: name.value,
+    author_email: email.value,
+    content: comment.value,
+  });
+  console.log(data);
+
+  fetch("https://exam1.stinenygren.no/wp-json/wp/v2/comments", {
+    method: `POST`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: data,
+  })
+    .then((response) => {
+      if (response.ok === true) {
+      }
+
+      return response.json();
+    })
+    .catch((error) => console.error("Error", error));
+}

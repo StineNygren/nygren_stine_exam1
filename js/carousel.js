@@ -1,4 +1,4 @@
-import getBlogs from "./test.js";
+import getBlogs from "./api.js";
 
 const carousel = document.querySelector(".carousel");
 const carouselWrapper = document.querySelector(".carousel-wrapper");
@@ -15,7 +15,7 @@ function postBlogs(result) {
   result.forEach((post) => {
     const date = post.date.slice(0, 10);
     carousel.innerHTML += `
-              <div class="carousel-post" draggable="false">
+              <div class="carousel-post flex" draggable="false">
                 <img class="drink-img" src="${post.acf.image}" alt="${post.acf.alttext}" draggable="false">
                 <div class="carousel-text">
                 <p class="post-date">${date} | ${post.acf.readtime}</p>

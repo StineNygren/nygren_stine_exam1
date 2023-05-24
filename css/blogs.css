@@ -5,6 +5,7 @@
   justify-items: center;
   grid-template-columns: 1fr;
   gap: 2rem 0;
+  padding: 2rem 0;
 }
 .post-text {
   background-color: white;

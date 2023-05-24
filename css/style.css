@@ -158,8 +158,10 @@ footer > * {
   color: white;
   text-decoration: none;
   font-size: clamp(1.6rem, 1.56rem + 0.2vw, 1.8rem);
+  margin: 0 0.5rem;
 }
 
 .social-media img {
   width: 3rem;
+  margin: 0 0.5rem;
 }

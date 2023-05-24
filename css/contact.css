@@ -3,6 +3,7 @@ main {
 }
 
 .contact-form {
+  margin-top: 2rem;
   flex-direction: column;
   gap: 0.5rem;
 }
@@ -29,8 +30,10 @@ main {
 .submit-btn {
   background-color: var(--tertiary-color);
   border-radius: 5px;
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   border: none;
+  font-family: "Arapey", serif;
+  font-size: clamp(1.6rem, 1.56rem + 0.2vw, 1.8rem);
 }
 
 .form-error {

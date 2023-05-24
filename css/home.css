@@ -1,4 +1,6 @@
-@import "./style.css";
+/* @import "./style.css"; */
+
+/* hero section */
 
 .hero-paragraph {
   margin: 2rem 0;
@@ -10,7 +12,6 @@
 }
 .qoute-section p {
   width: 50vw;
-
   padding-top: 3rem;
   margin-left: 2rem;
   margin-top: 2rem;
@@ -28,25 +29,19 @@
   font-size: clamp(1.6rem, 1.56rem + 0.2vw, 1.8rem);
 }
 
-/* .hero-section {
-  justify-content: space-around;
-} */
-
 .img-hero-section img {
   position: absolute;
   top: 14rem;
   right: 2rem;
-  /* width: 35vw; */
   width: clamp(11rem, 7.2rem + 19vw, 30rem);
 }
-.img-hero-section.active {
+/* .img-hero-section.active {
   display: none;
-}
+} */
 
-h1 {
+/* h1 {
   font-weight: normal;
-  /* text-transform: uppercase; */
-}
+} */
 
 .text-hero-section p {
   width: 40vw;
@@ -56,16 +51,9 @@ h1 {
 }
 
 @media (min-width: 700px) {
-  /* .qoute-section {
-    height: 30vh;
-  } */
   .img-hero-section img {
     top: 13rem;
     right: 4rem;
-    /* width: 35vw; */
-    /* top: 10rem;
-    right: 10rem; */
-    /* width: 30vw; */
   }
   .text-hero-section p {
     width: 50vw;
@@ -83,14 +71,10 @@ h1 {
   .img-hero-section img {
     top: 13rem;
     right: 6rem;
-    /* width: 35vw; */
-    /* top: 10rem;
-    right: 10rem; */
-    /* width: 30vw; */
   }
-  .text-hero-section p {
+  /* .text-hero-section p {
     width: 50vw;
-  }
+  } */
   .text-hero-section,
   .qoute-section p {
     margin-top: 3rem;
@@ -98,10 +82,10 @@ h1 {
   }
 }
 
-/* noe */
+/* carousel */
 
 .carousel-post {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
 }
@@ -146,12 +130,18 @@ h1 {
   overflow: hidden;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 3));
+  grid-auto-columns: calc((100% / 4));
   /* grid-auto-columns: calc((100% / 3) - 12px); */
   /* gap: 16px; */
   /* justify-items: center; */
 }
 
+@media (max-width: 1200px) {
+  .carousel-wrapper .carousel {
+    grid-auto-columns: calc((100% / 3));
+    /* grid-auto-columns: calc((100% / 2) - 9px); */
+  }
+}
 @media (max-width: 900px) {
   .carousel-wrapper .carousel {
     grid-auto-columns: calc((100% / 2));
@@ -168,9 +158,13 @@ h1 {
   cursor: grab;
   user-select: none;
 }
+
+/* coffee prosess */
+
 .coffee-beans,
 .coffee-grounds,
-.coffee-done {
+.coffee-done,
+.coffee-prosess {
   flex-direction: column;
   align-items: center;
   display: flex;
@@ -178,10 +172,8 @@ h1 {
 }
 .coffee-prosess {
   background-color: var(--secondary-color);
-  flex-direction: column;
-  align-items: center;
+
   padding: 3rem;
-  gap: 2rem;
 }
 
 @media (min-width: 600px) {
