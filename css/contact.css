@@ -11,7 +11,7 @@ main {
 .contact-form-wrapper {
   background: rgba(2, 1, 1, 0.75);
   border-radius: 20px;
-  width: clamp(30rem, 28rem + 10vw, 40rem);
+  width: clamp(20rem, 30rem + 10vw, 50rem);
   padding: 2rem 3rem;
 }
 

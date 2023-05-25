@@ -71,24 +71,24 @@ const commentForm = document.querySelector("#comment-form");
 
 commentForm.innerHTML = `
 <input type="hidden" id="postId" value="${id}" />
-<div>
+<div class="comment-name comment-all ">
   <label for="name">Name*</label>
-  <input id="name" type="text" required />
+  <input  id="name" type="text" required />
 </div>
-<div>
+<div class="comment-email comment-all">
   <label for="email">Email*</label>
   <input id="email" type="email" required />
 </div>
-<div>
+<div class="comment-text comment-all ">
   <label for="comment">Comment*</label>
   <textarea id="comment" required></textarea>
 </div>
-<input type="submit" value="Post comment!" />
+<input class="comment-btn color-white" type="submit" value="Post comment" />
 `;
 
 // Trying comments
 
-function handleSubmit(evt) {
+async function handleSubmit(evt) {
   evt.preventDefault();
 
   const [id, name, email, comment] = evt.target.elements;
@@ -116,3 +116,12 @@ function handleSubmit(evt) {
     })
     .catch((error) => console.error("Error", error));
 }
+//   fetch("https://exam1.stinenygren.no/wp-json/wp/v2/comments")
+//     .then((response) => {
+//       if (response.ok === true) {
+//       }
+
+//       return response.json();
+//     })
+//     .catch((error) => console.error("Error", error));
+// }

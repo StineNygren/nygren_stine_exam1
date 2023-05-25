@@ -1,5 +1,21 @@
 @import "./style.css";
 
+/* search */
+
+.search-wrapper {
+  padding: 3rem;
+}
+
+#search-input {
+  margin: 0 auto;
+  height: 3rem;
+  width: 25vw;
+  border-radius: 3rem;
+  padding: 0.5rem;
+}
+
+/* blog posts */
+
 .blog-posts {
   display: grid;
   justify-items: center;
@@ -29,19 +45,19 @@
   margin: 3rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .blog-posts {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   .blog-posts {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .blog-posts {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }

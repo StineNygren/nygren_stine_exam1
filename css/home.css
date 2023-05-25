@@ -108,7 +108,8 @@
   transform: translateY(-50%);
 }
 .post-link {
-  color: black;
+  color: var(--tertiary-color);
+  font-weight: bold;
 }
 .drink-name {
   margin: 0.5rem 0;
@@ -172,8 +173,9 @@
 }
 .coffee-prosess {
   background-color: var(--secondary-color);
+  gap: 5rem;
 
-  padding: 3rem;
+  padding: 5rem;
 }
 
 @media (min-width: 600px) {

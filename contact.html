@@ -60,47 +60,32 @@
       <section class="contact-form-wrapper">
         <h1 class="color-white font-size-large text-center">Contact</h1>
         <form action="" class="flex contact-form" id="form">
-          <input
-            class="input-field"
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Name:"
-          />
-          <div class="form-error" id="name-error">
+          <label class="color-white" for="name">Name</label>
+          <input class="input-field" type="text" name="name" id="name" />
+          <p class="form-error" id="name-error">
             Must be more than 5 characters long
-          </div>
-          <input
-            class="input-field"
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Email:"
-          />
-          <div class="form-error" id="email-error">
+          </p>
+          <label class="color-white" for="email">Email</label>
+          <input class="input-field" type="text" name="email" id="email" />
+          <p class="form-error" id="email-error">
             Must be a valid email address
-          </div>
-          <input
-            class="input-field"
-            type="text"
-            name="subject"
-            id="subject"
-            placeholder="Subject:"
-          />
-          <div class="form-error" id="subject-error">
+          </p>
+          <label class="color-white" for="subject">Subject</label>
+          <input class="input-field" type="text" name="subject" id="subject" />
+          <p class="form-error" id="subject-error">
             Must be more than 15 characters long
-          </div>
+          </p>
+          <label class="color-white" for="message">Message</label>
           <textarea
             class="input-field"
             name="message"
             id="message"
             cols="30"
             rows="10"
-            placeholder="Message:"
           ></textarea>
-          <div class="form-error" id="message-error">
+          <p class="form-error" id="message-error">
             Must be more than 25 characters long
-          </div>
+          </p>
           <input class="submit-btn color-white" type="submit" value="submit" />
         </form>
       </section>
