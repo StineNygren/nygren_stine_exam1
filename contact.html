@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Goldbrews</title>
+    <title>Goldbrews | Contact</title>
     <script
       src="https://kit.fontawesome.com/7e6258cfd5.js"
       crossorigin="anonymous"
@@ -38,15 +38,19 @@
   </head>
   <body>
     <header class="flex">
-      <a href="./index.html" class="logo">
+      <a href="./index.html" class="logo" aria-label="Gold Brews Home">
         <img src="./img/logo.svg" alt="The logo of Gold Brews" />
       </a>
       <section class="navigation">
         <div class="toggle-butten font-size-medium">
-          <i onclick="myFunction(this)" class="fa fa-bars"></i>
+          <i
+            onclick="myFunction(this)"
+            class="fa fa-bars"
+            aria-label="Toggle Navigation Menu"
+          ></i>
         </div>
         <nav class="navigation-section">
-          <ul class="flex navigation-list">
+          <ul class="flex navigation-list" role="menubar">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./blogs.html">Blogs</a></li>
             <li><a href="./contact.html">Contact</a></li>
@@ -60,36 +64,56 @@
       <section class="contact-form-wrapper">
         <h1 class="color-white font-size-large text-center">Contact</h1>
         <form action="" class="flex contact-form" id="form">
-          <label class="color-white" for="name">Name</label>
-          <input class="input-field" type="text" name="name" id="name" />
-          <p class="form-error" id="name-error">
-            Must be more than 5 characters long
-          </p>
-          <label class="color-white" for="email">Email</label>
-          <input class="input-field" type="text" name="email" id="email" />
-          <p class="form-error" id="email-error">
-            Must be a valid email address
-          </p>
-          <label class="color-white" for="subject">Subject</label>
-          <input class="input-field" type="text" name="subject" id="subject" />
-          <p class="form-error" id="subject-error">
-            Must be more than 15 characters long
-          </p>
-          <label class="color-white" for="message">Message</label>
-          <textarea
-            class="input-field"
-            name="message"
-            id="message"
-            cols="30"
-            rows="10"
-          ></textarea>
-          <p class="form-error" id="message-error">
-            Must be more than 25 characters long
-          </p>
-          <input class="submit-btn color-white" type="submit" value="submit" />
+          <div class="form-field">
+            <label class="color-white" for="name">Name</label>
+            <input class="input-field" type="text" name="name" id="name" />
+            <p class="form-error" id="name-error">
+              Must be more than 5 characters long
+            </p>
+          </div>
+          <div class="form-field">
+            <label class="color-white" for="email">Email</label>
+            <input class="input-field" type="email" name="email" id="email" />
+            <p class="form-error" id="email-error">
+              Must be a valid email address
+            </p>
+          </div>
+          <div class="form-field">
+            <label class="color-white" for="subject">Subject</label>
+            <input
+              class="input-field"
+              type="text"
+              name="subject"
+              id="subject"
+            />
+            <p class="form-error" id="subject-error">
+              Must be more than 15 characters long
+            </p>
+          </div>
+          <div class="form-field">
+            <label class="color-white" for="message">Message</label>
+            <textarea
+              class="input-field"
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <p class="form-error" id="message-error">
+              Must be more than 25 characters long
+            </p>
+          </div>
+          <div class="form-field">
+            <input
+              class="submit-btn color-white"
+              type="submit"
+              value="Submit"
+            />
+          </div>
         </form>
       </section>
     </main>
+
     <footer>
       <div class="footer-logo">
         <img src="./img/logo-footer.png" alt="golden brews logo" />

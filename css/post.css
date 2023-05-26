@@ -25,9 +25,9 @@
   transform: translate(-50%, -50%);
 }
 .post-hero {
-  display: flex;
   flex-direction: column;
   max-width: 120rem;
+  justify-content: center;
 }
 
 .post-hero-text {

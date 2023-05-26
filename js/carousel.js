@@ -6,10 +6,16 @@ const carouselBtn = document.querySelectorAll(".carousel-wrapper i");
 
 let firstCardWidth;
 
-getBlogs().then((result) => {
+// getBlogs().then((result) => {
+//   postBlogs(result);
+//   firstCardWidth = carousel.querySelector(".carousel-post").offsetWidth;
+// });
+
+async function getCarousel() {
+  const result = await getBlogs();
   postBlogs(result);
   firstCardWidth = carousel.querySelector(".carousel-post").offsetWidth;
-});
+}
 
 function postBlogs(result) {
   result.forEach((post) => {
@@ -28,46 +34,80 @@ function postBlogs(result) {
   });
 }
 
+function scrollCarousel(direction) {
+  const currentScrollLeft = carousel.scrollLeft;
+  const targetScrollLeft =
+    direction === "prev"
+      ? currentScrollLeft - firstCardWidth
+      : currentScrollLeft + firstCardWidth;
+
+  const index = Math.round(targetScrollLeft / firstCardWidth);
+  const newScrollLeft = index * firstCardWidth;
+
+  carousel.scrollTo({
+    left: newScrollLeft,
+    behavior: "smooth",
+  });
+}
+
 carouselBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
-    const currentScrollLeft = carousel.scrollLeft;
-    const targetScrollLeft =
-      btn.id === "prev"
-        ? currentScrollLeft - firstCardWidth
-        : currentScrollLeft + firstCardWidth;
-    const index = Math.round(targetScrollLeft / firstCardWidth);
-    const newScrollLeft = index * firstCardWidth;
-    carousel.scrollTo({
-      left: newScrollLeft,
-      behavior: "smooth",
-    });
+    scrollCarousel(btn.id);
   });
 });
+
+// carouselBtn.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     const currentScrollLeft = carousel.scrollLeft;
+//     const targetScrollLeft =
+//       btn.id === "prev"
+//         ? currentScrollLeft - firstCardWidth
+//         : currentScrollLeft + firstCardWidth;
+//     const index = Math.round(targetScrollLeft / firstCardWidth);
+//     const newScrollLeft = index * firstCardWidth;
+//     carousel.scrollTo({
+//       left: newScrollLeft,
+//       behavior: "smooth",
+//     });
+//   });
+// });
 
 let isDragging = false,
   startX,
   startScrollLeft;
 
-const dragStart = (e) => {
+function dragStart(e) {
   isDragging = true;
-  if (e.type === "touchstart") {
-    startX = e.touches[0].pageX;
-  } else {
-    startX = e.pageX;
-  }
+  startX = e.type === "touchstart" ? e.touches[0].pageX : e.pageX;
   startScrollLeft = carousel.scrollLeft;
-};
+}
 
-const dragging = (e) => {
+function dragging(e) {
   if (!isDragging) return;
-  let currentX;
-  if (e.type === "touchmove") {
-    currentX = e.touches[0].pageX;
-  } else {
-    currentX = e.pageX;
-  }
+  const currentX = e.type === "touchmove" ? e.touches[0].pageX : e.pageX;
   carousel.scrollLeft = startScrollLeft - (currentX - startX);
-};
+}
+
+// const dragStart = (e) => {
+//   isDragging = true;
+//   if (e.type === "touchstart") {
+//     startX = e.touches[0].pageX;
+//   } else {
+//     startX = e.pageX;
+//   }
+//   startScrollLeft = carousel.scrollLeft;
+// };
+
+// const dragging = (e) => {
+//   if (!isDragging) return;
+//   let currentX;
+//   if (e.type === "touchmove") {
+//     currentX = e.touches[0].pageX;
+//   } else {
+//     currentX = e.pageX;
+//   }
+//   carousel.scrollLeft = startScrollLeft - (currentX - startX);
+// };
 
 const dragStop = (e) => {
   isDragging = false;
@@ -93,3 +133,5 @@ carousel.addEventListener("touchend", dragStop);
 window.addEventListener("resize", () => {
   firstCardWidth = carousel.querySelector(".carousel-post").offsetWidth;
 });
+
+getCarousel();

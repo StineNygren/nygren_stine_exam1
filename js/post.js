@@ -4,7 +4,6 @@ let id = urlParams.get("id");
 
 const postHero = document.querySelector(".post-hero");
 const postParagraph = document.querySelector(".post-paragraph");
-const main = document.querySelector("main");
 const postHeroImg = document.querySelector(".post-hero-img");
 const postHeroText = document.querySelector(".post-hero-text");
 const modal = document.querySelector("#modal");
@@ -13,6 +12,11 @@ async function singlePost() {
     const response = await fetch(
       `https://exam1.stinenygren.no/wp-json/wp/v2/coffee/${id}`
     );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch post. Status: " + response.status);
+    }
+
     const result = await response.json();
     console.log(result.acf.image);
     const date = result.date.slice(0, 10);
@@ -47,7 +51,6 @@ singlePost();
 
 window.onload = function () {
   const openModal = document.querySelector("#openmodal");
-  console.log(openModal);
 };
 
 const modalclass = document.querySelector(".modal");
@@ -88,6 +91,8 @@ commentForm.innerHTML = `
 
 // Trying comments
 
+const commentUrl = "https://exam1.stinenygren.no/wp-json/wp/v2/comments";
+
 async function handleSubmit(evt) {
   evt.preventDefault();
 
@@ -99,24 +104,46 @@ async function handleSubmit(evt) {
     author_email: email.value,
     content: comment.value,
   });
-  console.log(data);
 
-  fetch("https://exam1.stinenygren.no/wp-json/wp/v2/comments", {
-    method: `POST`,
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: data,
-  })
-    .then((response) => {
-      if (response.ok === true) {
-      }
+  try {
+    const response = await fetch(commentUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: data,
+    });
 
-      return response.json();
-    })
-    .catch((error) => console.error("Error", error));
+    if (!response.ok) {
+      throw new Error("Failed to submit comment. Status: " + response.status);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
 }
-//   fetch("https://exam1.stinenygren.no/wp-json/wp/v2/comments")
+
+// async function handleSubmit(evt) {
+//   evt.preventDefault();
+
+//   const [id, name, email, comment] = evt.target.elements;
+
+//   const data = JSON.stringify({
+//     post: id,
+//     author_name: name.value,
+//     author_email: email.value,
+//     content: comment.value,
+//   });
+//   console.log(data);
+
+//   fetch("https://exam1.stinenygren.no/wp-json/wp/v2/comments", {
+//     method: `POST`,
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: data,
+//   })
 //     .then((response) => {
 //       if (response.ok === true) {
 //       }

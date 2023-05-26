@@ -39,15 +39,19 @@
   </head>
   <body>
     <header class="flex">
-      <a href="./index.html" class="logo">
+      <a href="./index.html" class="logo" aria-label="Gold Brews Home">
         <img src="./img/logo.svg" alt="The logo of Gold Brews" />
       </a>
       <section class="navigation">
         <div class="toggle-butten font-size-medium">
-          <i onclick="myFunction(this)" class="fa fa-bars"></i>
+          <i
+            onclick="myFunction(this)"
+            class="fa fa-bars"
+            aria-label="Toggle Navigation Menu"
+          ></i>
         </div>
         <nav class="navigation-section">
-          <ul class="flex navigation-list">
+          <ul class="flex navigation-list" role="menubar">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./blogs.html">Blogs</a></li>
             <li><a href="./contact.html">Contact</a></li>
@@ -69,7 +73,10 @@
           </button>
         </div>
         <div class="img-hero-section">
-          <img src="./img/hero-img.svg" alt="" />
+          <img
+            src="./img/hero-img.svg"
+            alt="Milk being poured into a glass of iced coffee."
+          />
         </div>
       </section>
       <section class="qoute-section">
@@ -79,10 +86,17 @@
       </section>
 
       <section class="carousel-wrapper">
-        <i id="prev" class="fa-solid fa-chevron-left"></i>
+        <i
+          id="prev"
+          aria-label="Previous Slide"
+          class="fa-solid fa-chevron-left"
+        ></i>
         <div class="carousel"></div>
-
-        <i id="next" class="fa-solid fa-chevron-right"></i>
+        <i
+          id="next"
+          aria-label="Next Slide"
+          class="fa-solid fa-chevron-right"
+        ></i>
       </section>
       <section class="coffee-prosess">
         <section class="coffee-beans">

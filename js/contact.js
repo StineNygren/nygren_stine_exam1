@@ -12,17 +12,54 @@ const messageError = document.querySelector("#message-error");
 
 document.title = "Contact";
 
-form.addEventListener("keyup", (event) => {
-  nameValidation(event);
-  emailValidation(event);
-  subjectValidation(event);
-  messageValidation(event);
-});
+async function handleSubmit(event) {
+  const wordpressName = "exam1.stinenygren.no";
+  const wordpressPassword = "TlVk grKO yYEi 072w ATAU CCqC";
+  const contactUrl = "https://exam1.stinenygren.no/wp-json/wp/v2/contact";
+
+  const data = JSON.stringify({
+    title: nameInput.value,
+    status: "publish",
+    acf: {
+      name: nameInput.value,
+      email: email.value,
+      subject: subject.value,
+      message: message.value,
+    },
+  });
+
+  try {
+    const response = await fetch(contactUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Basic " + btoa(wordpressName + ":" + wordpressPassword),
+      },
+      body: data,
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to submit comment. Status: " + response.status);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// form.addEventListener("keyup", (event) => {
+//   nameValidation(event);
+//   emailValidation(event);
+//   subjectValidation(event);
+//   messageValidation(event);
+// });
 form.addEventListener("submit", (event) => {
   nameValidation(event);
   emailValidation(event);
   subjectValidation(event);
   messageValidation(event);
+  handleSubmit(event);
 });
 
 function nameValidation(event) {

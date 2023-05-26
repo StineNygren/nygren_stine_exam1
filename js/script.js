@@ -6,7 +6,6 @@ const imgHero = document.querySelector(".img-hero-section");
 toggleButton.addEventListener("click", () => {
   navigationSection.classList.toggle("active");
   coffeeIcon.classList.toggle("active");
-  // imgHero.classList.toggle("active");
 });
 
 function myFunction(x) {

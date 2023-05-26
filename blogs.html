@@ -39,15 +39,19 @@
   </head>
   <body>
     <header class="flex">
-      <a href="./index.html" class="logo">
+      <a href="./index.html" class="logo" aria-label="Gold Brews Home">
         <img src="./img/logo.svg" alt="The logo of Gold Brews" />
       </a>
       <section class="navigation">
         <div class="toggle-butten font-size-medium">
-          <i onclick="myFunction(this)" class="fa fa-bars"></i>
+          <i
+            onclick="myFunction(this)"
+            class="fa fa-bars"
+            aria-label="Toggle Navigation Menu"
+          ></i>
         </div>
         <nav class="navigation-section">
-          <ul class="flex navigation-list">
+          <ul class="flex navigation-list" role="menubar">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./blogs.html">Blogs</a></li>
             <li><a href="./contact.html">Contact</a></li>
@@ -63,7 +67,7 @@
         <input
           class="flex"
           type="search"
-          name=""
+          name="search"
           id="search-input"
           placeholder="Search..."
         />

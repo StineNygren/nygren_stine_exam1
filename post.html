@@ -38,15 +38,19 @@
   </head>
   <body>
     <header class="flex">
-      <a href="./index.html" class="logo">
+      <a href="./index.html" class="logo" aria-label="Gold Brews Home">
         <img src="./img/logo.svg" alt="The logo of Gold Brews" />
       </a>
       <section class="navigation">
         <div class="toggle-butten font-size-medium">
-          <i onclick="myFunction(this)" class="fa fa-bars"></i>
+          <i
+            onclick="myFunction(this)"
+            class="fa fa-bars"
+            aria-label="Toggle Navigation Menu"
+          ></i>
         </div>
         <nav class="navigation-section">
-          <ul class="flex navigation-list">
+          <ul class="flex navigation-list" role="menubar">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./blogs.html">Blogs</a></li>
             <li><a href="./contact.html">Contact</a></li>
@@ -57,15 +61,22 @@
       </section>
     </header>
     <main class="flex post-main">
-      <section class="post-hero">
-        <div class="post-hero-img" id="openmodal"></div>
-        <div class="post-hero-text"></div>
-      </section>
-      <div class="modal" id="modal">
-        <div></div>
-      </div>
+      <article>
+        <section class="post-hero flex">
+          <div
+            class="post-hero-img"
+            id="openmodal"
+            role="button"
+            aria-label="View Image"
+          ></div>
+          <div class="post-hero-text"></div>
+        </section>
+        <div class="modal" id="modal">
+          <div></div>
+        </div>
 
-      <section class="post-paragraph font-size-small"></section>
+        <section class="post-paragraph font-size-small"></section>
+      </article>
 
       <form id="comment-form" onsubmit="handleSubmit(event)"></form>
     </main>

@@ -67,6 +67,11 @@ async function getBlogs() {
     const response = await fetch(
       `https://exam1.stinenygren.no/wp-json/wp/v2/coffee?per_page=10&page=${page}`
     );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch blogs. Status: " + response.status);
+    }
+
     const result = await response.json();
     // console.log(result);
 
@@ -75,7 +80,8 @@ async function getBlogs() {
     result.forEach((post) => {
       const date = post.date.slice(0, 10);
       blogPosts.innerHTML += `
-        <a href="./post.html?id=${post.id}" class="post link ">
+      <article class="post">
+        <a href="./post.html?id=${post.id}" class=" link ">
           <img class="drink-img" src="${post.acf.image}" alt="${post.acf.alttext}">
           <div class="post-text">
           <p class="post-date link font-size-small">${date} | ${post.acf.readtime}</p>
@@ -83,6 +89,7 @@ async function getBlogs() {
           <p class="drink-ingredients link font-size-small">${post.acf.ingredients}</p>
           </div>
         </a>
+        </article>
       `;
       if (page >= totalPages) {
         moreBtn.style.display = "none";
@@ -106,7 +113,7 @@ function searchPosts(result) {
     getBlogs();
   });
 
-  for (let i = 0; i < 22; i++) {
+  for (let i = 0; i < postCards.length; i++) {
     const drinkName = document.querySelectorAll(".drink-name");
 
     searchInput.addEventListener("input", (e) => {
