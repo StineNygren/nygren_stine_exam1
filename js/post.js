@@ -21,7 +21,7 @@ async function singlePost() {
     console.log(result.acf.image);
     const date = result.date.slice(0, 10);
 
-    document.title = result.slug;
+    document.title = "Post " + "| " + result.slug;
 
     postHeroImg.innerHTML = `
     <img class="hero-drink-img"  src="${result.acf.imagel}" alt="${result.acf.alttext}">
@@ -86,7 +86,7 @@ commentForm.innerHTML = `
   <label for="comment">Comment*</label>
   <textarea id="comment" required></textarea>
 </div>
-<input class="comment-btn color-white" type="submit" value="Post comment" />
+<input class="comment-btn btn color-white" type="submit" value="Post comment" />
 `;
 
 // Trying comments

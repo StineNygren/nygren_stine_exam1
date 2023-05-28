@@ -30,12 +30,7 @@ main {
 }
 
 .submit-btn {
-  background-color: var(--tertiary-color);
-  border-radius: 5px;
   padding: 1rem 2rem;
-  border: none;
-  font-family: "Arapey", serif;
-  font-size: clamp(1.6rem, 1.56rem + 0.2vw, 1.8rem);
 }
 
 .form-error {

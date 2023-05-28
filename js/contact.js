@@ -39,7 +39,7 @@ async function handleSubmit(event) {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to submit comment. Status: " + response.status);
+      throw new Error("Failed to submit. Status: " + response.status);
     }
 
     return response.json();
