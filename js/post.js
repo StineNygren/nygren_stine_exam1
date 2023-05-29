@@ -34,7 +34,7 @@ async function singlePost() {
 
 
     <p class="post-date font-size-small">${date} | ${result.acf.readtime}</p>
-    <h2 class="drink-name font-size-large">${result.slug}</h2>
+    <h1 class="drink-name font-size-large">${result.slug}</h1>
     <p class="drink-ingredients font-size-small">${result.acf.ingredients}</p>
 
 
@@ -123,32 +123,3 @@ async function handleSubmit(evt) {
     console.log(error);
   }
 }
-
-// async function handleSubmit(evt) {
-//   evt.preventDefault();
-
-//   const [id, name, email, comment] = evt.target.elements;
-
-//   const data = JSON.stringify({
-//     post: id,
-//     author_name: name.value,
-//     author_email: email.value,
-//     content: comment.value,
-//   });
-//   console.log(data);
-
-//   fetch("https://exam1.stinenygren.no/wp-json/wp/v2/comments", {
-//     method: `POST`,
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: data,
-//   })
-//     .then((response) => {
-//       if (response.ok === true) {
-//       }
-
-//       return response.json();
-//     })
-//     .catch((error) => console.error("Error", error));
-// }

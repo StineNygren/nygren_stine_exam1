@@ -55,26 +55,28 @@
             aria-label="Toggle Navigation Menu"
           ></i>
         </div>
-        <nav class="navigation-section">
-          <ul class="flex navigation-list" role="menubar">
+        <nav class="navigation-section" role="menubar">
+          <ul class="flex navigation-list">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./blogs.html">Blogs</a></li>
             <li><a href="./contact.html">Contact</a></li>
             <li><a href="./about.html">About us</a></li>
-            <div class="coffee-icon"></div>
+            <i class="coffee-icon"></i>
           </ul>
         </nav>
       </section>
     </header>
     <main>
       <h1 class="text-center font-size-large">Blogs</h1>
+
       <div class="search-wrapper">
+        <label class="font-size-small" for="search-input">Search:</label>
         <input
           class="flex"
           type="search"
           name="search"
           id="search-input"
-          placeholder="Search..."
+          placeholder="What coffee do you like..."
         />
       </div>
       <section class="blog-posts"></section>

@@ -1,11 +1,16 @@
 /* search */
 
 .search-wrapper {
+  display: grid;
+  justify-content: center;
   padding: 3rem;
 }
 
+.search-wrapper label {
+  padding: 0.5rem 1rem;
+}
+
 #search-input {
-  margin: 0 auto;
   height: 3rem;
   min-width: 15rem;
   width: 25vw;

@@ -1,62 +1,3 @@
-// import getBlogs from "./api.js";
-
-// const blogPosts = document.querySelector(".blog-posts");
-// const moreBtn = document.querySelector(".more-btn");
-
-// async function getBlogs() {
-//   try {
-//     const response = await fetch(
-//       `https://exam1.stinenygren.no/wp-json/wp/v2/coffee?per_page=20`
-//     );
-//     const result = await response.json();
-
-//     result.forEach((post) => {
-//       const date = post.date.slice(0, 10);
-//       blogPosts.innerHTML += `
-//         <a href="./post.html?id=${post.id}" class="post link ">
-//           <img class="drink-img" src="${post.acf.image}" alt="${post.acf.alttext}">
-//           <div class="post-text">
-//           <p class="post-date link font-size-small">${date} | ${post.acf.readtime}</p>
-//           <h2 class="drink-name link font-size-large">${post.slug}</h2>
-//           <p class="drink-ingredients link font-size-small">${post.acf.ingredients}</p>
-//           </div>
-//         </a>
-//       `;
-//     });
-
-//     searchPosts(result);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-// getBlogs();
-
-// function searchPosts(result) {
-//   const searchInput = document.querySelector("#search-input");
-//   const postCards = document.querySelectorAll(".post");
-
-//   for (let i = 0; i < 22; i++) {
-//     const drinkName = document.querySelectorAll(".drink-name");
-
-//     searchInput.addEventListener("input", (e) => {
-//       const value = e.target.value.toLowerCase();
-
-//       postCards.forEach((postCard) => {
-//         const drinkName = postCard
-//           .querySelector(".drink-name")
-//           .textContent.toLowerCase();
-//         const visible = drinkName.includes(value);
-//         postCard.classList.toggle("hide", !visible);
-//       });
-//     });
-//   }
-// }
-
-// moreBtn.addEventListener("click", () => {});
-
-//
-
 const blogPosts = document.querySelector(".blog-posts");
 const moreBtn = document.querySelector(".more-btn");
 let page = 1;
@@ -73,7 +14,6 @@ async function getBlogs() {
     }
 
     const result = await response.json();
-    // console.log(result);
 
     totalPages = response.headers.get("X-WP-TotalPages");
 

@@ -48,23 +48,18 @@ async function handleSubmit(event) {
   }
 }
 
-// form.addEventListener("keyup", (event) => {
-//   nameValidation(event);
-//   emailValidation(event);
-//   subjectValidation(event);
-//   messageValidation(event);
-// });
 form.addEventListener("submit", (event) => {
+  handleSubmit(event);
   nameValidation(event);
   emailValidation(event);
   subjectValidation(event);
   messageValidation(event);
-  handleSubmit(event);
 });
 
 function nameValidation(event) {
   if (nameInput.value.length > 5) {
     nameError.style.visibility = "hidden";
+
     return true;
   }
   event.preventDefault();

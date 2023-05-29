@@ -6,10 +6,6 @@ const carouselBtn = document.querySelectorAll(".carousel-wrapper i");
 
 let firstCardWidth;
 
-// getBlogs().then((result) => {
-//   postBlogs(result);
-//   firstCardWidth = carousel.querySelector(".carousel-post").offsetWidth;
-// });
 
 async function getCarousel() {
   const result = await getBlogs();
@@ -56,21 +52,6 @@ carouselBtn.forEach((btn) => {
   });
 });
 
-// carouselBtn.forEach((btn) => {
-//   btn.addEventListener("click", () => {
-//     const currentScrollLeft = carousel.scrollLeft;
-//     const targetScrollLeft =
-//       btn.id === "prev"
-//         ? currentScrollLeft - firstCardWidth
-//         : currentScrollLeft + firstCardWidth;
-//     const index = Math.round(targetScrollLeft / firstCardWidth);
-//     const newScrollLeft = index * firstCardWidth;
-//     carousel.scrollTo({
-//       left: newScrollLeft,
-//       behavior: "smooth",
-//     });
-//   });
-// });
 
 let isDragging = false,
   startX,
@@ -88,26 +69,6 @@ function dragging(e) {
   carousel.scrollLeft = startScrollLeft - (currentX - startX);
 }
 
-// const dragStart = (e) => {
-//   isDragging = true;
-//   if (e.type === "touchstart") {
-//     startX = e.touches[0].pageX;
-//   } else {
-//     startX = e.pageX;
-//   }
-//   startScrollLeft = carousel.scrollLeft;
-// };
-
-// const dragging = (e) => {
-//   if (!isDragging) return;
-//   let currentX;
-//   if (e.type === "touchmove") {
-//     currentX = e.touches[0].pageX;
-//   } else {
-//     currentX = e.pageX;
-//   }
-//   carousel.scrollLeft = startScrollLeft - (currentX - startX);
-// };
 
 const dragStop = (e) => {
   isDragging = false;
