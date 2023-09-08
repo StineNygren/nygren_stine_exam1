@@ -6,7 +6,6 @@ const carouselBtn = document.querySelectorAll(".carousel-wrapper i");
 
 let firstCardWidth;
 
-
 async function getCarousel() {
   const result = await getBlogs();
   postBlogs(result);
@@ -37,11 +36,8 @@ function scrollCarousel(direction) {
       ? currentScrollLeft - firstCardWidth
       : currentScrollLeft + firstCardWidth;
 
-  const index = Math.round(targetScrollLeft / firstCardWidth);
-  const newScrollLeft = index * firstCardWidth;
-
   carousel.scrollTo({
-    left: newScrollLeft,
+    left: targetScrollLeft,
     behavior: "smooth",
   });
 }
@@ -51,7 +47,6 @@ carouselBtn.forEach((btn) => {
     scrollCarousel(btn.id);
   });
 });
-
 
 let isDragging = false,
   startX,
@@ -68,7 +63,6 @@ function dragging(e) {
   const currentX = e.type === "touchmove" ? e.touches[0].pageX : e.pageX;
   carousel.scrollLeft = startScrollLeft - (currentX - startX);
 }
-
 
 const dragStop = (e) => {
   isDragging = false;

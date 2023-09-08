@@ -32,7 +32,7 @@
   width: clamp(11rem, 7.2rem + 19vw, 30rem);
 }
 
-.text-hero-section p {
+.text-hero-section h2 {
   width: 40vw;
 }
 .text-hero-section {
@@ -44,7 +44,7 @@
     top: 13rem;
     right: 4rem;
   }
-  .text-hero-section p {
+  .text-hero-section h2 {
     width: 50vw;
   }
   .text-hero-section,

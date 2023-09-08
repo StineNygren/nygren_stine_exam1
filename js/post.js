@@ -92,6 +92,7 @@ commentForm.innerHTML = `
 // Trying comments
 
 const commentUrl = "https://exam1.stinenygren.no/wp-json/wp/v2/comments";
+console.log(id);
 
 async function handleSubmit(evt) {
   evt.preventDefault();
@@ -99,12 +100,13 @@ async function handleSubmit(evt) {
   const [id, name, email, comment] = evt.target.elements;
 
   const data = JSON.stringify({
-    post: id,
+    post: id.value,
     author_name: name.value,
     author_email: email.value,
     content: comment.value,
   });
 
+  console.log(data);
   try {
     const response = await fetch(commentUrl, {
       method: "POST",
